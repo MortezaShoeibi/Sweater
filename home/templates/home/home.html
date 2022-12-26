@@ -2,15 +2,57 @@
 {% block title %} Morteza Shoeibi | مرتضی شعیبی {% endblock %}
 
 {% block content %}
+    {% if sweats %}
         {% for sweat in sweats %}
             <br>
-            <div class="bs-example">
-                <hr>
-            <h3>{{ sweat.title }}</h3>
-            <p>{{ sweat.text }}</p>
-            <small>{{ sweat.created_at }}</small>
-                <hr>
+            <div class="box-element">
+                <h3>{{ sweat.title }}</h3>
+                <br>
+                <p>{{ sweat.text }}</p>
+                <small>{{ sweat.created_at }}</small>
             </div>
             <br>
         {% endfor %}
+            <div class="text text-center">
+
+                {% if sweats.has_other_pages %}
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-center">
+                            {% if sweats.has_previous %}
+                                <li class=" page-item">
+                                    <a class="page-link" href="?page={{ sweats.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">قبلی</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item  disabled">
+                                    <a class="page-link" href="#">قبلی</a>
+                                </li>
+                            {% endif %}
+                            {% for i in sweats.paginator.page_range %}
+
+                                {% if sweats.number == i %}
+                                    <li class="page-item active ">
+                                        <a class="page-link" href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a>
+                                    </li>
+                                {% endif %}
+
+                            {% endfor %}
+                            {% if sweats.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ sweats.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">بعدی</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                <a class="page-link" href="#">بعدی</a>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+    {% else %}
+        <>
+    {% endif %}
 {% endblock %}
