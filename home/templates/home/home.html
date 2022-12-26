@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load jalali_tags %}
 {% block title %} Morteza Shoeibi | مرتضی شعیبی {% endblock %}
 
 {% block content %}
@@ -10,7 +11,7 @@
                 <hr>
                 <br>
                 <p>{{ sweat.text|safe }}</p>
-                <small>{{ sweat.created_at }}</small>
+                <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</small>
             </div>
             <br>
         {% endfor %}
