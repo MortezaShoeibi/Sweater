@@ -7,8 +7,9 @@
             <br>
             <div class="box-element">
                 <h3>{{ sweat.title }}</h3>
+                <hr>
                 <br>
-                <p>{{ sweat.text }}</p>
+                <p>{{ sweat.text|safe }}</p>
                 <small>{{ sweat.created_at }}</small>
             </div>
             <br>

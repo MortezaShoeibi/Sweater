@@ -1,9 +1,10 @@
 from django.db import models
+from tinymce import models as tiny_models
 
 
 class Sweat(models.Model):
     title = models.CharField(max_length=5000)
-    text = models.TextField()
+    text = tiny_models.HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
