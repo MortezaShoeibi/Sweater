@@ -1,0 +1,16 @@
+body {
+    position: relative;
+    text-align: right;
+}
+
+.bs-example {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: #BBBFCA 0 0 20px;
+    padding: 10px;
+}

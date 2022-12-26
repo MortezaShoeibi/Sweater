@@ -2,5 +2,15 @@
 {% block title %} Morteza Shoeibi | مرتضی شعیبی {% endblock %}
 
 {% block content %}
-    <h1>hi this is the home page</h1>
+        {% for sweat in sweats %}
+            <br>
+            <div class="bs-example">
+                <hr>
+            <h3>{{ sweat.title }}</h3>
+            <p>{{ sweat.text }}</p>
+            <small>{{ sweat.created_at }}</small>
+                <hr>
+            </div>
+            <br>
+        {% endfor %}
 {% endblock %}
