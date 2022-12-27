@@ -3,7 +3,7 @@
 {% block title %} Morteza Shoeibi | مرتضی شعیبی {% endblock %}
 
 {% block content %}
-    {% if sweats %}
+    {% if sweats != None %}
         {% for sweat in sweats %}
             <br>
             <div class="box-element">
@@ -55,6 +55,10 @@
                 {% endif %}
             </div>
     {% else %}
-        <>
+        <div class="container">
+            <div class="text text-center">
+                <h1>< no sweats yet ></h1>
+            </div>
+        </div>
     {% endif %}
 {% endblock %}

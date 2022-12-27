@@ -14,8 +14,13 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-<div class="container">
-<h1>سوئیت</h1>
+
+<!-- sidebar -->
+{% include 'sidebar.html' %}
+
+<!-- content -->
+<div class="container sweat-align">
+<h1 class="display-3">سوئیت</h1>
     {% block content %}
 
     {% endblock %}
