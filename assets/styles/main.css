@@ -71,11 +71,14 @@ div.content {
 }
 
 .about {
+    direction: rtl;
     margin: 50px;
+    padding-left: 20%;
     font-size: 14pt;
+    word-break: break-word;
 }
 
 .last-update {
-    margin: 10px 15px 10px 8px;
+    margin: 20px 20px 10px 10px;
 }
 
