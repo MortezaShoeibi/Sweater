@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load jalali_tags %}
+{% block title %} Morteza Shoeibi | مرتضی شعیبی {% endblock %}
+
+{% block header %} درباره {% endblock %}
+{% block content %}
+<div class="text">
+{% if about %}
+    <div class="about">
+        <p>{{ about.text|safe }}</p>
+    </div>
+    <div class="last-update">
+        <p>:آخرین بروزرسانی در</p>
+        <small>{{ about.last_update|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
+    </div>
+{% endif %}
+</div>
+{% endblock %}

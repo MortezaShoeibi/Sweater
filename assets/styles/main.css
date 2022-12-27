@@ -20,46 +20,62 @@ body {
 
 
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #121212;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #121212;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 
 .sidebar a {
-  display: block;
-  color: rgb(230, 231, 240);
-  padding: 16px;
-  text-decoration: none;
+    display: block;
+    color: rgb(230, 231, 240);
+    padding: 16px;
+    text-decoration: none;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #1f1b24;
-  color: white;
+    background-color: #1f1b24;
+    color: white;
 }
 
 div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
 }
 
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
 }
+
+.about {
+    margin: 50px;
+    font-size: 14pt;
+}
+
+.last-update {
+    margin: 10px 15px 10px 8px;
+}
+
