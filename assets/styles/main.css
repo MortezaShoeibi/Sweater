@@ -15,9 +15,12 @@ body {
     border-radius: 4px;
     -webkit-box-shadow: none;
     box-shadow: #BBBFCA 0 0 20px;
-    padding: 10px;
+    padding: 10px 2%;
 }
 
+.sweat-card {
+    padding: 10px 2% 10px 20%;
+}
 
 .sidebar {
     margin: 0;

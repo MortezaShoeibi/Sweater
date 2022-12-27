@@ -6,15 +6,15 @@
 {% block content %}
     {% if sweats != None %}
         {% for sweat in sweats %}
-            <br>
-            <div class="box-element">
-                <h3>{{ sweat.title }}</h3>
-                <hr>
-                <br>
-                <p>{{ sweat.text|safe }}</p>
-                <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</small>
+            <div class="sweat-card">
+                <div class="box-element">
+                    <h3>{{ sweat.title }}</h3>
+                    <hr>
+                    <br>
+                    <p>{{ sweat.text|safe }}</p>
+                    <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</small>
+                </div>
             </div>
-            <br>
         {% endfor %}
             <div class="text text-center">
 
