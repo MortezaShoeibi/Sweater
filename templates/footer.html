@@ -1,0 +1,13 @@
+{% load jalali_tags %}
+<div id="footer" class="container sweat-algin">
+    <hr id="footer-line">
+    <div class="footer-content text-sm-end">
+        <h1 class="display-5">{{ footer.title }}</h1>
+        <br>
+        <p>{{ footer.text|safe }}</p>
+        <div class="last-update">
+        <p>:آخرین بروزرسانی در</p>
+        <small>{{ footer.last_update|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
+    </div>
+    </div>
+</div>

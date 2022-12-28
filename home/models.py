@@ -21,4 +21,12 @@ class About(models.Model):
 
     def __str__(self) -> str:
         return f'...{self.last_update}  |  {self.text[:15]}'
-    
+
+
+class Footer(models.Model):
+    title = models.CharField(max_length=100)
+    text = tiny_models.HTMLField()
+    last_update = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f'...{self.title}  |  {self.text[:15]}'
