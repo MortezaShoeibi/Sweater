@@ -16,6 +16,7 @@ body {
     -webkit-box-shadow: none;
     box-shadow: #BBBFCA 0 0 20px;
     padding: 10px 2%;
+    font-size: 13pt;
 }
 
 .sweat-card {
