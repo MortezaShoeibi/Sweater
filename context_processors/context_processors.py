@@ -1,7 +1,7 @@
 from home.models import Footer
 
 
-def footer(request) -> object:
+def footer(request) -> dict:
     footer = Footer.objects.last()
     if footer != None:
         pre_footer = Footer.objects.filter(id=footer.id - 1)
