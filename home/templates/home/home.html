@@ -12,7 +12,12 @@
                     <hr>
                     <br>
                     <p>{{ sweat.text|safe }}</p>
-                    <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
+                    <div class="end-sweat">
+                        <a onclick="like();"><i id="like" class="fa fa-heart-o"></i></a><span id="count"> 1 </span>
+                        <a onclick="like();"><i id="like" class="fa fa-heart"></i></a><span id="count"> 1 </span>
+                        <br>
+                        <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
+                    </div>
                 </div>
             </div>
         {% endfor %}
