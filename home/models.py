@@ -5,6 +5,7 @@ from tinymce import models as tiny_models
 class Sweat(models.Model):
     title = models.CharField(max_length=5000)
     text = tiny_models.HTMLField()
+    like = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
