@@ -5,5 +5,5 @@ I was wearing a sweater when I was thinking about having my own blog, so I'v got
 I am not a front-end developer, this is the best I could do.
 
 # TODO:
-1. fix front-end bugs
+1. add anonymous users like system
 2. launch the project
