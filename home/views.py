@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Sweat, About
 from django.core.paginator import Paginator
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, JsonResponse
 
 
 def home(request) -> HttpResponse:
@@ -23,3 +23,19 @@ def about(request) -> HttpResponse:
         pre_about = About.objects.filter(id=about.id - 1)
         pre_about.delete()
     return render(request, 'home/about.html', {'about': about})
+
+
+def like(request, pk) -> JsonResponse:
+    is_liked = request.session.get('is_liked', False)
+    if is_liked:
+            sweat = Sweat.objects.get(id=pk)
+            sweat.like -= 1
+            sweat.save()
+            request.session['is_liked'] = False
+            return JsonResponse({'response': 'unliked'})
+    else:
+        sweat = Sweat.objects.get(id=pk)
+        sweat.like += 1
+        sweat.save()
+        request.session['is_liked'] = True
+        return JsonResponse({'response': 'liked'})
