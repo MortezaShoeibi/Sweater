@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Sweat, About
 from django.core.paginator import Paginator
 from django.http.response import HttpResponse
@@ -10,6 +10,11 @@ def home(request) -> HttpResponse:
     page_num = request.GET.get('page')
     sweats = paginator.get_page(page_num)
     return render(request, 'home/home.html', {'sweats': sweats})
+
+
+def sweat_details(request, pk) -> HttpResponse:
+    sweat = get_object_or_404(Sweat, id=pk)
+    return render(request, 'home/sweat.html', {'sweat': sweat})
 
 
 def about(request) -> HttpResponse:

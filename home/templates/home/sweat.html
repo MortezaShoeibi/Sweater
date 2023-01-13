@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load jalali_tags %}
+
+{% if sweats != None %}
+    {% block title %} Sweater | {{ sweat.title }} {% endblock %}
+    {% block header %} <br> {% endblock %}
+    {% block content %}
+        <div class="sweat-card">
+            <div class="box-element">
+                <h3>{{ sweat.title }}</h3>
+                <hr>
+                <br>
+                <p>{{ sweat.text|safe }}</p>
+                <div class="end-sweat">
+                    <a onclick="like();"><i id="like" class="fa fa-heart-o"></i></a><span
+                        id="count"> {{ sweat.like }} </span>
+                    <a onclick="like();"><i id="like" class="fa fa-heart"></i></a><span
+                        id="count"> {{ sweat.like }} </span>
+                    <br>
+                    <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endif %}

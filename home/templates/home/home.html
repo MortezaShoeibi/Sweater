@@ -11,10 +11,9 @@
                     <h3>{{ sweat.title }}</h3>
                     <hr>
                     <br>
-                    <p>{{ sweat.text|safe }}</p>
+                    <p>{{ sweat.text|safe|truncatewords:30 }}</p><a style="font-size: 16pt" href="{% url 'home:sweat' sweat.id %}">...بیشتر</a>
                     <div class="end-sweat">
-                        <a onclick="like();"><i id="like" class="fa fa-heart-o"></i></a><span id="count"> 1 </span>
-                        <a onclick="like();"><i id="like" class="fa fa-heart"></i></a><span id="count"> 1 </span>
+                        <i class="fa fa-heart"></i><span id="count"> {{ sweat.like }} </span>
                         <br>
                         <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
                     </div>
