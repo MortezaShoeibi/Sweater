@@ -5,5 +5,5 @@ I was wearing a sweater when I was thinking about having my own blog, so I'v got
 I am not a front-end developer, this is the best I could do.
 
 # TODO:
-1. add anonymous users like system
+1. fix the 'heart disappearing after unliking' bug
 2. launch the project
