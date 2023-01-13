@@ -1,9 +1,10 @@
 console.log("JavaScript Connected...");
 
 function like(id) {
-    console.log("Liked...");
+
     let element = document.getElementById('like');
     let count = document.getElementById('count');
+
     $.get(`like/${id}`).then(response => {
         if (response['response'] === 'liked') {
             element.className = 'fa fa-heart';
