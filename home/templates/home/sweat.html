@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load jalali_tags %}
+{% load filters %}
 
 {% if sweats != None %}
     {% block title %} Sweater | {{ sweat.title }} {% endblock %}
@@ -12,8 +13,7 @@
                 <br>
                 <p>{{ sweat.text|safe }}</p>
                 <div class="end-sweat">
-                    <!-- TODO: fix the heart color bug -->
-                    <a onclick="like({{ sweat.id }});"><i id="like" class="fa fa-heart-o"></i></a> <span id="count"> {{ sweat.like }} </span>
+                    <a onclick="like({{ sweat.id }});"><i id="like" class="{{ request.session.likes|get_class:sweat.id }}"></i></a> <span id="count"> {{ sweat.like }} </span>
                     <br>
                     <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
                 </div>
