@@ -12,11 +12,8 @@
                 <br>
                 <p>{{ sweat.text|safe }}</p>
                 <div class="end-sweat">
-                    {% if request.session.is_liked %}
-                        <a onclick="like({{ sweat.id }});"><i id="like" class="fa fa-heart"></i></a> <span id="count"> {{ sweat.like }} </span>
-                    {% else %}
-                        <a onclick="like({{ sweat.id }});"><i id="like" class="fa fa-heart-o"></i></a> <span id="count"> {{ sweat.like }} </span>
-                    {% endif %}
+                    <!-- TODO: fix the heart color bug -->
+                    <a onclick="like({{ sweat.id }});"><i id="like" class="fa fa-heart-o"></i></a> <span id="count"> {{ sweat.like }} </span>
                     <br>
                     <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
                 </div>

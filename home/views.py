@@ -5,6 +5,7 @@ from django.http.response import HttpResponse, JsonResponse
 
 
 def home(request) -> HttpResponse:
+    request.session['likes'] = {}
     objects_list = Sweat.objects.order_by("-created_at")
     paginator = Paginator(objects_list, 3)
     page_num = request.GET.get('page')
@@ -26,16 +27,15 @@ def about(request) -> HttpResponse:
 
 
 def like(request, pk) -> JsonResponse:
-    is_liked = request.session.get('is_liked', False)
+    is_liked = request.session['likes'].get(f'sweat_number{pk}', False)
+    sweat = Sweat.objects.get(id=pk)
     if is_liked:
-            sweat = Sweat.objects.get(id=pk)
             sweat.like -= 1
             sweat.save()
-            request.session['is_liked'] = False
+            request.session['likes'][f'sweat_number{pk}'] = False
             return JsonResponse({'response': 'unliked'})
     else:
-        sweat = Sweat.objects.get(id=pk)
         sweat.like += 1
         sweat.save()
-        request.session['is_liked'] = True
+        request.session['likes'][f'sweat_number{pk}'] = True
         return JsonResponse({'response': 'liked'})
