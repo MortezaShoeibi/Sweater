@@ -30,10 +30,10 @@ def like(request, pk) -> JsonResponse:
     is_liked = request.session['likes'].get(f'sweat_number{pk}', False)
     sweat = Sweat.objects.get(id=pk)
     if is_liked:
-            sweat.like -= 1
-            sweat.save()
-            request.session['likes'][f'sweat_number{pk}'] = False
-            return JsonResponse({'response': 'unliked'})
+        sweat.like -= 1
+        sweat.save()
+        request.session['likes'][f'sweat_number{pk}'] = False
+        return JsonResponse({'response': 'unliked'})
     else:
         sweat.like += 1
         sweat.save()
