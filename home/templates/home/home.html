@@ -13,7 +13,7 @@
                     <br>
                     <p>{{ sweat.text|safe|truncatewords:30 }}</p><a style="font-size: 16pt" href="{% url 'home:sweat' sweat.id %}">...بیشتر</a>
                     <div class="end-sweat">
-                        <i class="fa fa-heart"></i><span id="count"> {{ sweat.like }} </span>
+                        <i style="color: black" class="fa fa-heart"></i><span id="count"> {{ sweat.like }} </span>
                         <br>
                         <small>{{ sweat.created_at|to_jalali:'%Y/%m/%d - %H:%M:%S' }}</small>
                     </div>
