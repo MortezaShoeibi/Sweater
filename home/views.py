@@ -5,7 +5,7 @@ from django.http.response import HttpResponse, JsonResponse
 
 
 def home(request) -> HttpResponse:
-    request.session['likes'] = {}
+    request.session.get('likes', {})
     objects_list = Sweat.objects.order_by("-created_at")
     paginator = Paginator(objects_list, 3)
     page_num = request.GET.get('page')
