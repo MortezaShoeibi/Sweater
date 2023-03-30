@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from home.apps import HomeConfig
+from core.apps import CoreConfig
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # local apps
-    'home.apps.HomeConfig',
+    'core.apps.CoreConfig',
     # third party apps
     'tinymce',
     'jalali_date',

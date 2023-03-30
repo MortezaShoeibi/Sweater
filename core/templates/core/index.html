@@ -11,7 +11,7 @@
                     <h3>{{ sweat.title }}</h3>
                     <hr>
                     <br>
-                    <p>{{ sweat.text|safe|truncatewords:30 }}</p><a style="font-size: 16pt" href="{% url 'home:sweat' sweat.id %}">...بیشتر</a>
+                    <p>{{ sweat.text|safe|truncatewords:30 }}</p><a style="font-size: 16pt" href="{% url 'core:sweat' sweat.id %}">...بیشتر</a>
                     <div class="end-sweat">
                         <i style="color: black" class="fa fa-heart"></i><span id="count"> {{ sweat.like }} </span>
                         <br>

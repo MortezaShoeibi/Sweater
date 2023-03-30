@@ -4,19 +4,19 @@ from django.core.paginator import Paginator
 from django.http.response import HttpResponse, JsonResponse
 
 
-def home(request) -> HttpResponse:
+def index(request) -> HttpResponse:
     if request.session.get('likes') is None:
         request.session['likes'] = {}
     objects_list = Sweat.objects.order_by("-created_at")
     paginator = Paginator(objects_list, 3)
     page_num = request.GET.get('page')
     sweats = paginator.get_page(page_num)
-    return render(request, 'home/home.html', {'sweats': sweats})
+    return render(request, 'core/index.html', {'sweats': sweats})
 
 
 def sweat_details(request, pk) -> HttpResponse:
     sweat = get_object_or_404(Sweat, id=pk)
-    return render(request, 'home/sweat.html', {'sweat': sweat})
+    return render(request, 'core/sweat.html', {'sweat': sweat})
 
 
 def about(request) -> HttpResponse:
@@ -24,7 +24,7 @@ def about(request) -> HttpResponse:
     if about != None:
         pre_about = About.objects.filter(id=about.id - 1)
         pre_about.delete()
-    return render(request, 'home/about.html', {'about': about})
+    return render(request, 'core/about.html', {'about': about})
 
 
 def like(request, pk) -> JsonResponse:

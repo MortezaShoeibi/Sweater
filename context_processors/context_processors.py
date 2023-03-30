@@ -1,4 +1,4 @@
-from home.models import Footer
+from core.models import Footer
 
 
 def footer(request) -> dict:

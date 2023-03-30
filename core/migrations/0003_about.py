@@ -7,7 +7,7 @@ import tinymce.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0002_alter_sweat_text'),
+        ('core', '0002_alter_sweat_text'),
     ]
 
     operations = [
